@@ -474,8 +474,11 @@ def build():
 
     # place name, large and legible, shadowed in the band's dark ink
     title = "NIMBARA"
-    draw_text_centered(cv, title, W // 2 + 4, 852, 15, (8, 9, 26))
-    draw_text_centered(cv, title, W // 2, 848, 15, GOLD)
+    draw_text_centered(cv, title, W // 2 + 4, 850, 16, (8, 9, 26))
+    draw_text_centered(cv, title, W // 2, 846, 16, GOLD)
+    # gold underline rule under the name, sized to the enlarged title
+    tw = text_width(title, 16)
+    cv.fill_rect(W // 2 - tw // 2, 962, tw, 2, GOLD)
 
     # the promise of the place, small caps beneath the name
     sub = "CITY ABOVE THE CLOUDS"
